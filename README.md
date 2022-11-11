@@ -16,7 +16,7 @@ Features included:
 
 # Installation
 
-- Option 1. Committing [update set](./releases/REST_API_Engine_100.xml)
+- Option 1. Committing [update set](./releases/REST_API_Engine_002.xml)
 
 ## Technical solution
 
