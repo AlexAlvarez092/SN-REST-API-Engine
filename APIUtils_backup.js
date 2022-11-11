@@ -37,7 +37,7 @@ APIUtils.prototype = {
 		!this.paginate && this.grRecord.setLimit(100);
 
 		if (this.query) {
-			this._parseQuery();
+			this._getQuery();
 			this.grRecord.addEncodedQuery(this.query);
 		}
 
@@ -115,21 +115,34 @@ APIUtils.prototype = {
 		}
 	},
 
+	_canQuery: function (splittedQuery) {
+		var _that = this;
+
+		var forbiddenAttrs = [];
+
+		splittedQuery.forEach(function(_e) {
+			var _m = _that._getFieldMap(_e);
+			if (!_m.query) forbiddenAttrs.push(_e);
+		});
+
+		if (forbiddenAttrs.length > 0) this._throwError('Invalid request', 400, 'The following attributes cannot be queried: ' + forbiddenAttrs.toString());
+	},
+
 	// TODO
 	// ? We may reuse the method included in GlideRecordUtils()
 	_checkChoiceValue: function (field) {
-		var that = this;
+		var _that = this;
 
 		var _map = this._getFieldMap(field);
 
 		var _dependentFiltered = this.payload[_map.dependentField] ?
 			_map.choices.filter(function (choice) {
-				return choice.dependentValue === that.payload[_map.dependentField];
+				return choice.dependentValue === _that.payload[_map.dependentField];
 			}) :
 			_map.choices;
 
 		var valueFiltered = _dependentFiltered.filter(function (choice) {
-			return choice.value === that.payload[field];
+			return choice.value === _that.payload[field];
 		});
 
 		if (valueFiltered.length === 0) this._throwError('Invalid value for attribute: ' + field);
@@ -138,7 +151,7 @@ APIUtils.prototype = {
 
 	_checkForBiddenAttributes: function (payload, method) {
 		
-		var that = this;
+		var _that = this;
 		var forbiddenAttrs = [];
 		this.mapping.forEach(function (attr) {
 			if (!attr[method] && payload[attr.apiField]) forbiddenAttrs.push(attr.apiField);
@@ -150,7 +163,7 @@ APIUtils.prototype = {
 	},
 
 	_checkMissingRequiredAttributes: function (payload) {
-		var that = this;
+		var _that = this;
 		var requiredAttrs = this._getRequiredAttributes();
 		var missingAttrs = [];
 
@@ -205,6 +218,16 @@ APIUtils.prototype = {
 		return obj;
 	},
 
+	_decodeQuery: function (splittedQuery) {
+		var _that = this;
+		splittedQuery.forEach(function(_e) {
+			var _m = _that._getFieldMap(_e);
+			var _s = _e + '(?==)';
+			var _r = new RegExp(_s);
+			_that.query = _that.query.replace(_r, _m.dbField.name);
+		});
+	},
+
 	_encodeGr: function (record, field, operation, payload) {
 		if (!payload[field]) {
 			return; //ignore empty values
@@ -257,7 +280,7 @@ APIUtils.prototype = {
 	_getCount: function () {
 		var _ga = new GlideAggregate(this.settings.table.name);
 		_ga.addAggregate('COUNT');
-		this.query && _ga.addEncodedQuery(this.query());
+		this.query && _ga.addEncodedQuery(this.query);
 		_ga.query();
 
 		var _count = _ga.next() ? _ga.getAggregate('COUNT') : 0;
@@ -357,6 +380,16 @@ APIUtils.prototype = {
 		return _arrConfig;
 	},
 
+	_getQuery: function() {
+		// ! Limitation: Due to ES5, Lookbehind Assertion is not available
+		// ! Limitation: The attribute name must be written in camelCase format containing only alphabetic characters
+		var _r = /([a-z]+\w*)(?==)/g;
+		var _sq = this.query.match(_r);
+
+		this._canQuery(_sq);
+		this._decodeQuery(_sq);
+	},
+
 	_getRequiredAttributes: function () {
 		var _requiredAttrs = [];
 
@@ -413,11 +446,6 @@ APIUtils.prototype = {
 		var _start = this.paginate.perPage * this.paginate.page - this.paginate.perPage;
 		var _end = this.paginate.perPage * this.paginate.page;
 		this.grRecord.chooseWindow(_start, _end);
-	},
-
-	// TODO
-	_parseQuery: function () {
-		return undefined;
 	},
 
 	_postMultipleRequests: function () {
