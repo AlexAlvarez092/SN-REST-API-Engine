@@ -10,25 +10,27 @@ APIUtils.prototype = {
 		this.settings = this._getSettings(args.table);
 		this.mapping = this._getMapping();
 
-		// Initialize response variables
+		// Initialize variables relevant to GET requests or response send for other kind of requests
+		this.metadata = args.metadata || undefined; // Internally used. Defines whether return or not the pagination, sort, etc. info in GET requests
 		this.paginate = args.paginate || undefined;
 		this.sort = args.sort || undefined;
+		this.query = args.query || undefined; // Undefined for POST / PUT requests
 
-		// Initialize request variables
-		this.headers = args.headers || undefined;
-		this.url = args.url || undefined;
-		this.scriptedRestMessage = args.scriptedRestMessage || undefined;
+		// Initialize logging variables
+		// this.headers = args.headers || undefined;
+		// this.url = args.url || undefined;
+		// this.scriptedRestMessage = args.scriptedRestMessage || undefined;
 
+		// Initialize variables relevant to POST / PUT requests
 		this.payload = args.payload || undefined; // Undefined for GET requests. Mandatory for POST / PUT requests
 		this.recordId = args.recordId || undefined; // Undefined for POST requests. Mandatory for PUT requests
-		this.query = args.query || undefined; // Undefined for POST / PUT requests
-		
+
+		// Initialize variables relevant to recursive calls
 		// ? Is it possible to identify recursively calls?
 		this.recursiveCall = args.recursiveCall || false; // In recursive calls, this need to be true
 
+		// Variables used in several places
 		this.grRecord = args.record || undefined;
-
-		// Other global variables used by some methods
 		this.error = undefined;
 	},
 
@@ -51,14 +53,17 @@ APIUtils.prototype = {
 		while (this.grRecord.next())
 			records.push(this._decodeGr(this.grRecord));
 
-		return {
-			pageInfo: {
-				totalPages: this.paginate ? Math.ceil(this._getCount() / this.paginate.perPage) : 1,
-				currentPage: this.paginate ? parseFloat(this.paginate.page) : 1
-			},
-			count: records.length,
-			data: records
-		};
+		var response = !this.metadata ? 
+			records[0] :
+			{
+				pageInfo: {
+					totalPages: this.paginate ? Math.ceil(this._getCount() / this.paginate.perPage) : 1,
+					currentPage: this.paginate ? parseFloat(this.paginate.page) : 1
+				},
+				count: records.length,
+				data: records
+			};
+		return response;
 	},
 
 	postRequest: function () {
@@ -72,14 +77,10 @@ APIUtils.prototype = {
 		var _gr = new GlideRecord(this.settings.table.name);
 		_gr.newRecord();
 
-		for (var _field in payload) {
-			_gr = this._encodeGr(_gr, _field, 'post', payload);
-		}
+		for (var _field in payload) _gr = this._encodeGr(_gr, _field, 'post', payload);
 
 		// Validation
-		if (this.settings.validate) {
-			this._exec('u_rest_api_configuration_table', this.settings.id, 'u_validation_script', _gr);
-		}
+		if (this.settings.validate) this._exec('u_rest_api_configuration_table', this.settings.id, 'u_validation_script', _gr);
 
 		return _gr;
 	},
@@ -98,10 +99,11 @@ APIUtils.prototype = {
 
 			switch (map.type) {
 				case 'reference':
+					// Payload contains a new record
+					if (typeof(payload[field] !== 'string')) continue;
+
 					var grAux = new GlideRecord(map.referencedTable.name);
-					if (!grAux.get(map.referencedId.name, payload[field])) {
-						this._throwError('Record not found', 400, 'Record with ID ' + payload[field] + ' not found. Please, check payload attribute: ' + field);
-					}
+					if (!grAux.get(map.referencedId.name, payload[field])) this._throwError('Record not found', 400, 'Record with ID ' + payload[field] + ' not found. Please, check payload attribute: ' + field);
 					break;
 
 				case 'choice':
@@ -155,7 +157,6 @@ APIUtils.prototype = {
 		var forbiddenAttrs = [];
 		this.mapping.forEach(function (attr) {
 			if (!attr[method] && payload[attr.apiField]) forbiddenAttrs.push(attr.apiField);
-
 		});
 
 		// ! Limitation: if there are forbidden attributes in recursive calls they are not detected in this request but they would be in the next request
@@ -169,7 +170,6 @@ APIUtils.prototype = {
 
 		requiredAttrs.forEach(function (attr) {
 			if (!payload[attr] || gs.nil(payload[attr])) missingAttrs.push(attr);
-
 		});
 
 		// ! Limitation: if there are forbidden attributes in recursive calls they are not detected in this request but they would be in the next request
@@ -202,13 +202,23 @@ APIUtils.prototype = {
 					break;
 
 				case 'reference':
-					obj[_m.apiField] = _m.display ?
-						_gr[_m.dbField.name][_m.referencedId.name].getDisplayValue() || "" :
-						_gr[_m.dbField.name].getValue() || "";
+					switch(_m.getType) {
+						case 'display':
+							obj[_m.apiField] = _gr[_m.dbField.name][_m.referencedId.name].getDisplayValue();
+							break;
+
+						case 'object':
+							obj[_m.apiField] = new APIUtils({ table: _m.referencedTable.name, query: 'sys_id=' + _gr[_m.dbField.name].getValue()}).getRequest();
+							break;
+
+						default:
+							obj[_m.apiField] = _gr[_m.dbField.name].getValue();
+							break;
+					}
 					break;
 
 				default:
-					obj[_m.apiField] = _m.display ?
+					obj[_m.apiField] = _m.getType === 'display' ?
 						_gr.getDisplayValue(_m.dbField.name) || "" :
 						_gr.getValue(_m.dbField.name) || "";
 					break;
@@ -229,15 +239,18 @@ APIUtils.prototype = {
 	},
 
 	_encodeGr: function (record, field, operation, payload) {
-		if (!payload[field]) {
-			return; //ignore empty values
-		}
+		if (!payload[field]) return; //ignore empty values
 
 		var _map = this._getFieldMap(field);
 
 		switch (_map.type) {
 
 			case 'reference':
+				if (typeof(payload[field]) === 'object') {
+					record[_map.dbField.name] = new APIUtils({ table: _map.referencedTable.name, recursiveCall: true, payload: payload[field] }).postRequest();
+					break;
+				} 
+
 				// ? We may reuse the method included in GlideRecordUtils()
 				var grAux = new GlideRecord(_map.referencedTable.name);
 				// In the methods _canPost and _canPut we checked that the record exists
@@ -270,9 +283,7 @@ APIUtils.prototype = {
 
 		var _res = _ev.evaluateScript(_mapGr, script);
 
-		if (this.error) {
-			this._throwError(this.error, this.error.code, this.error.detail);
-		}
+		if (this.error) this._throwError(this.error, this.error.code, this.error.detail);
 
 		return _res;
 	},
@@ -290,9 +301,7 @@ APIUtils.prototype = {
 	_getFieldMap: function (field) {
 		var _map = undefined;
 		this.mapping.forEach(function (_attr) {
-			if (_attr.apiField == field) {
-				_map = _attr;
-			}
+			if (_attr.apiField == field) _map = _attr;
 		});
 
 		return _map;
@@ -314,12 +323,6 @@ APIUtils.prototype = {
 			var objConfig = {
 				id: _c.getUniqueValue(),
 				type: _c.getValue('u_type'),
-				table: {
-					name: _c.getValue('u_table') ? _c.u_table.name.getValue() : '',
-					/* Dot-walking may break it out if the attribute is empty */
-					id: _c.getValue('u_table'),
-					label: _c.getDisplayValue('u_table')
-				},
 				dbField: {
 					name: _c.getValue('u_field') ? _c.u_field.element.getValue() : '',
 					/* Dot-walking may break it out if the attribute is empty */
@@ -328,6 +331,7 @@ APIUtils.prototype = {
 				},
 				apiField: _c.getValue('u_api_field_name'),
 				get: (_c.getValue('u_get') === '1'),
+				getType: _c.getValue('u_get_type'),
 				post: (_c.getValue('u_post') === '1'),
 				put: (_c.getValue('u_put') === '1'),
 				display: (_c.getValue('u_display') === '1'),
@@ -361,19 +365,16 @@ APIUtils.prototype = {
 				grChoice.addQuery('language', 'en');
 				grChoice.query();
 
-				while (grChoice.next()) {
+				while (grChoice.next()) 
 					objConfig.choices.push({
 						label: grChoice.getValue('label'),
 						value: grChoice.getValue('value'),
 						dependentValue: grChoice.getValue('dependent_value')
 					});
-				}
 			}
 
-			if (_c.getValue('u_type') === 'date') {
-				objConfig.format = _c.getValue('u_format');
-			}
-
+			if (_c.getValue('u_type') === 'date') objConfig.format = _c.getValue('u_format');
+			
 			_arrConfig.push(objConfig);
 		}
 
@@ -394,9 +395,7 @@ APIUtils.prototype = {
 		var _requiredAttrs = [];
 
 		this.mapping.forEach(function (attr) {
-			if (attr.required) {
-				_requiredAttrs.push(attr.apiField);
-			}
+			if (attr.required) _requiredAttrs.push(attr.apiField);
 		});
 		return _requiredAttrs;
 	},
@@ -432,11 +431,8 @@ APIUtils.prototype = {
 	_insertGlideRecord: function (_gr) {
 		// Custom POST. Just encode the gr and execute the script
 		// TODO Sent also the original payload
-		if (this.settings.custom_post) {
-			_gr = this._exec('u_rest_api_configuration_table', this.settings.id, 'u_custom_post_script', _gr);
-		} else {
-			_gr.insert();
-		}
+		if (this.settings.custom_post) _gr = this._exec('u_rest_api_configuration_table', this.settings.id, 'u_custom_post_script', _gr);
+		else _gr.insert();
 
 		var _resp = this.recursiveCall ? _gr.getUniqueValue() : this._decodeGr(_gr);
 		return _resp;
@@ -478,7 +474,7 @@ APIUtils.prototype = {
 	_sort: function () {
 		var _m = this._getFieldMap(this.sort.by);
 		(!this.sort.order || this.sort.order == 'ASC') ?
-		this.grRecord.orderBy(_m.dbField.name):
+			this.grRecord.orderBy(_m.dbField.name):
 			this.grRecord.orderByDesc(_m.dbField.name);
 
 	},
