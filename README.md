@@ -24,6 +24,8 @@ Features included:
 
 - `APIUtils()`: Contains the logic of the application.
 
+![APIUtils UML](./README/APIUtils_uml.png)
+
 ### Tables
 
 | Table | Description |
