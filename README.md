@@ -16,7 +16,7 @@ Features included:
 
 # Installation
 
-- Option 1. Committing [update set](./releases/REST_API_Engine_002.xml)
+- Option 1. Committing [update set](./README/client_script_type_changes.gif)
 
 ## Technical solution
 
@@ -34,6 +34,10 @@ Features included:
 ### Client scripts
 
 - `Type changes`: Modify the behavior of the form view of the *REST API Configuration Object*.
+
+![Type changes](./README/client_script_type_changes.mov)
+
+
 
 ### UI Policies
 
