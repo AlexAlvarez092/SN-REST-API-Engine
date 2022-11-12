@@ -33,9 +33,21 @@ Features included:
 ### Tables
 
 | Table | Description |
-| ------------- | ----------- |
+| ----- | ----------- |
 | REST API Configuration Table | Contains the configuration for a table |
 | REST API Configuration Object | Contains the configuration for an object |
+
+#### REST API Configuration Table - Attributes
+
+| Attribute | Type | Default value | Example | Description |
+| --------- | ---- | ------------- | ------- | ----------- |
+| Number | String | n/a | CONFTBL0001001 | Human-readable record identifier |
+| Table | Reference to *sys_db_object* | n/A | Opportunity[*u_opportunity*] | Main table in hand. REST requests linked to this configuration object performs mainly over this table. However is it possible to perform actions over different tables via scripts [More info](#) |
+| Key | Reference to *sys_dictionary* | n/a | Number[*u_number*] | Human-readable **unique** attribute representing a record in the table in hand. (i.e.: *sys_user.user_name*, *task.number*) |
+| Source | List of *sys_user* | n/a | Abel Tuter, David Loo | The current configuration object **only applies** for the selected users |
+| Active | Boolean | true | n/a | Enable/disable the current record |
+| Custom POST | Boolean | false | n/a | If enabled, the API Engine executes a custom script for the inserction of new records. If disabled, the API Engine executes `record.insert()` and do not run the custom script |
+| Custom POSt Script | Script | n/a | n/a | Custom script executed if the above flag is enabled [More info](#) |
 
 ### Client scripts
 
