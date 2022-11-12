@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2022-11-08 20:20:56">
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2022-11-12 14:26:32">
 <sys_remote_update_set action="INSERT_OR_UPDATE">
 <application display_value="Global">global</application>
 <application_name>Global</application_name>
@@ -20,11 +20,11 @@
 <summary/>
 <sys_class_name>sys_remote_update_set</sys_class_name>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>80e18a691b8f5110ace755f0604bcb3b</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>331759be1bc3d110ace755f0604bcb83</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <update_set display_value=""/>
 <update_source display_value=""/>
 <updated/>
@@ -34,290 +34,8 @@
 <application display_value="Global">global</application>
 <category>customer</category>
 <comments/>
-<name>u_rest_api_configuration_object_99c6f34d1bc71110ace755f0604bcb46</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 15:34:40&lt;/sys_created_on&gt;&lt;sys_id&gt;99c6f34d1bc71110ace755f0604bcb46&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;id&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001018&lt;/u_number&gt;&lt;u_order&gt;0&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-1235098721</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>00e18a691b8f5110ace755f0604bcb3d</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612290000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>OBJCONF0001018</target_name>
-<type>REST API Configuration Object</type>
-<update_domain>global</update_domain>
-<update_guid>26910669628f5110bbb8f919badbed17</update_guid>
-<update_guid_history>26910669628f5110bbb8f919badbed17:-1235098721</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_object_4d1db0111b0f1110ace755f0604bcb16</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 20:42:40&lt;/sys_created_on&gt;&lt;sys_id&gt;4d1db0111b0f1110ace755f0604bcb16&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 21:45:54&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;description&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Short description" element="short_description" name="task"&gt;2a7056e4f90211108c8bd16244dfe70d&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001025&lt;/u_number&gt;&lt;u_order&gt;5&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-805036755</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>04e18a691b8f5110ace755f0604bcb3c</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612520000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>OBJCONF0001025</target_name>
-<type>REST API Configuration Object</type>
-<update_domain>global</update_domain>
-<update_guid>2691c6693c8f511067e60e33d558f9d7</update_guid>
-<update_guid_history>2691c6693c8f511067e60e33d558f9d7:-805036755</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_object_1217334d1bc71110ace755f0604bcbd0</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 15:36:06&lt;/sys_created_on&gt;&lt;sys_id&gt;1217334d1bc71110ace755f0604bcbd0&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;false&lt;/u_active&gt;&lt;u_api_field_name&gt;opened&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Opened" element="opened_at" name="task"&gt;a27056e4f90211108c8bd16244dfe71e&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001019&lt;/u_number&gt;&lt;u_order&gt;30&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;date&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-953981588</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>08e18a691b8f5110ace755f0604bcb3b</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e6127f0000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>OBJCONF0001019</target_name>
-<type>REST API Configuration Object</type>
-<update_domain>global</update_domain>
-<update_guid>be91c6691c8f5110c585f760e4edccd9</update_guid>
-<update_guid_history>be91c6691c8f5110c585f760e4edccd9:-953981588</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_table_d9cd685d1b8b1110ace755f0604bcb2d</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_table"&gt;&lt;u_rest_api_configuration_table action="INSERT_OR_UPDATE"&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 19:35:06&lt;/sys_created_on&gt;&lt;sys_id&gt;d9cd685d1b8b1110ace755f0604bcb2d&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 17:27:56&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_custom_post&gt;false&lt;/u_custom_post&gt;&lt;u_custom_post_script&gt;&lt;![CDATA[(function(scope, data) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, data);]]&gt;&lt;/u_custom_post_script&gt;&lt;u_key display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_key&gt;&lt;u_number&gt;CONFTBL0001002&lt;/u_number&gt;&lt;u_source&gt;6816f79cc0a8016401c5a33be04be441&lt;/u_source&gt;&lt;u_table display_value="Problem" name="problem"&gt;fef312a4f98211108c8bd16244dfe776&lt;/u_table&gt;&lt;u_validate&gt;false&lt;/u_validate&gt;&lt;u_validation_script&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		throw 'Error from problem configuration object';
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_validation_script&gt;&lt;/u_rest_api_configuration_table&gt;&lt;/record_update&gt;</payload>
-<payload_hash>437727874</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>0ce18a691b8f5110ace755f0604bcb3d</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e59d740000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>CONFTBL0001002</target_name>
-<type>REST API Configuration Table</type>
-<update_domain>global</update_domain>
-<update_guid>9f714669fc8f51109e692eb381331e47</update_guid>
-<update_guid_history>9f714669fc8f51109e692eb381331e47:437727874</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_object_31c85cd91b4b1110ace755f0604bcb2d</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 18:03:14&lt;/sys_created_on&gt;&lt;sys_id&gt;31c85cd91b4b1110ace755f0604bcb2d&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 20:11:46&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;id&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001002"&gt;d9cd685d1b8b1110ace755f0604bcb2d&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001024&lt;/u_number&gt;&lt;u_order&gt;0&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Problem" name="problem"&gt;fef312a4f98211108c8bd16244dfe776&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-1568256628</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>40e18a691b8f5110ace755f0604bcb3c</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612100000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>OBJCONF0001024</target_name>
-<type>REST API Configuration Object</type>
-<update_domain>global</update_domain>
-<update_guid>229106690b8f5110c9f70df73e2eb016</update_guid>
-<update_guid_history>229106690b8f5110c9f70df73e2eb016:-1568256628</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>sys_script_fix_cab14a691b8f5110ace755f0604bcbf9</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;&lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;&lt;before&gt;false&lt;/before&gt;&lt;description/&gt;&lt;name&gt;REST API Engine Testing&lt;/name&gt;&lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;&lt;script&gt;&lt;![CDATA[params = {
-    paginate: {
-        perPage: 1,
-        page: 1
-    },
-    sort: {
-        by: 'id',
-        order: 'DESC'
-    },
-    // payload: {
-    // description: 'Incident created from API',
-    // state: '2',
-    // problem: {
-    // description: 'Problem created from API',
-    // },
-    // parent: 'INC0009004'
-    // },
-    payload: [{
-            description: 'Incident created from API',
-            state: '2',
-            problem: {
-                description: 'Problem created from API',
-            },
-            parent: 'INC0009004'
-        },
-        {
-            description: 'Incident created from API - 2',
-            state: '2',
-            problem: {
-                description: 'Problem created from API - 2',
-            },
-            parent: 'INC0009004'
-        }
-    ],
-    table: 'incident' /* Mandatory */
-};
-
-var s = new APIUtils(params);
-
-//response = s.getRequest();
-response = s.postRequest();
-
-gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-08 20:20:31&lt;/sys_created_on&gt;&lt;sys_id&gt;cab14a691b8f5110ace755f0604bcbf9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;REST API Engine Testing&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_fix_cab14a691b8f5110ace755f0604bcbf9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 20:20:31&lt;/sys_updated_on&gt;&lt;unloadable&gt;false&lt;/unloadable&gt;&lt;/sys_script_fix&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-526554163</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>44e18a691b8f5110ace755f0604bcb3b</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e6cb940000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>REST API Engine Testing</target_name>
-<type>Fix Script</type>
-<update_domain>global</update_domain>
-<update_guid>52c10a69948f5110d79f6bb785525d40</update_guid>
-<update_guid_history>52c10a69948f5110d79f6bb785525d40:-526554163</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_object_e4a750d91b4b1110ace755f0604bcb18</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:58:15&lt;/sys_created_on&gt;&lt;sys_id&gt;e4a750d91b4b1110ace755f0604bcb18&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 22:08:47&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;state&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;false&lt;/u_display&gt;&lt;u_field display_value="State" element="state" name="task"&gt;a67056e4f90211108c8bd16244dfe715&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001022&lt;/u_number&gt;&lt;u_order&gt;41&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+<name>u_rest_api_configuration_object_284c00511b4b1110ace755f0604bcb0c</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:08:33&lt;/sys_created_on&gt;&lt;sys_id&gt;284c00511b4b1110ace755f0604bcb0c&lt;/sys_id&gt;&lt;sys_mod_count&gt;10&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 17:22:21&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;state_dv&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="State" element="state" name="task"&gt;a67056e4f90211108c8bd16244dfe715&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001020&lt;/u_number&gt;&lt;u_order&gt;40&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
     try {
 		return undefined;
 	} catch (e) {
@@ -336,66 +54,22 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 		scope.error = e;
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;choice&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-204877814</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<payload_hash>-293327151</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>48e18a691b8f5110ace755f0604bcb3d</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>331759be1bc3d110ace755f0604bcb84</sys_id>
 <sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612ab0000001</sys_recorded_at>
+<sys_recorded_at>18458e612970000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
-<target_name>OBJCONF0001022</target_name>
+<target_name>OBJCONF0001020</target_name>
 <type>REST API Configuration Object</type>
 <update_domain>global</update_domain>
-<update_guid>3a91c669fc8f511050ef89cea825ebdc</update_guid>
-<update_guid_history>3a91c669fc8f511050ef89cea825ebdc:-204877814</update_guid_history>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>u_rest_api_configuration_object_985c08111b4b1110ace755f0604bcbf7</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:08:49&lt;/sys_created_on&gt;&lt;sys_id&gt;985c08111b4b1110ace755f0604bcbf7&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;active&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Active" element="active" name="task"&gt;a67056e4f90211108c8bd16244dfe70e&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001021&lt;/u_number&gt;&lt;u_order&gt;50&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;boolean&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-1157594292</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>4ce18a691b8f5110ace755f0604bcb3c</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612c20000001</sys_recorded_at>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
-<table/>
-<target_name>OBJCONF0001021</target_name>
-<type>REST API Configuration Object</type>
-<update_domain>global</update_domain>
-<update_guid>3e91c6690b8f5110c2c049f3ede5d9dd</update_guid>
-<update_guid_history>3e91c6690b8f5110c2c049f3ede5d9dd:-1157594292</update_guid_history>
+<update_guid>7691c6693a8f51107474e4a62bbf45db</update_guid>
+<update_guid_history>7691c6693a8f51107474e4a62bbf45db:-293327151</update_guid_history>
 <update_set display_value=""/>
 <view/>
 </sys_update_xml>
@@ -429,15 +103,15 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;script&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
 <payload_hash>-1410433266</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>84e18a691b8f5110ace755f0604bcb3d</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>3b17ddf21b07d110ace755f0604bcb07</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_recorded_at>18458e612f20000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
 <target_name>OBJCONF0001023</target_name>
 <type>REST API Configuration Object</type>
@@ -473,15 +147,15 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table/&gt;&lt;u_type&gt;script&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
 <payload_hash>1376085580</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>88e18a691b8f5110ace755f0604bcb3c</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>3f17ddf21b07d110ace755f0604bcb06</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_recorded_at>18458e613030000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
 <target_name>OBJCONF0001029</target_name>
 <type>REST API Configuration Object</type>
@@ -496,42 +170,36 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 <application display_value="Global">global</application>
 <category>customer</category>
 <comments/>
-<name>u_rest_api_configuration_object_284c00511b4b1110ace755f0604bcb0c</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:08:33&lt;/sys_created_on&gt;&lt;sys_id&gt;284c00511b4b1110ace755f0604bcb0c&lt;/sys_id&gt;&lt;sys_mod_count&gt;10&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 17:22:21&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;state_dv&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="State" element="state" name="task"&gt;a67056e4f90211108c8bd16244dfe715&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001020&lt;/u_number&gt;&lt;u_order&gt;40&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+<name>u_rest_api_configuration_table_e0682cd91b8b1110ace755f0604bcb1c</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_table"&gt;&lt;u_rest_api_configuration_table action="INSERT_OR_UPDATE"&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 19:11:34&lt;/sys_created_on&gt;&lt;sys_id&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 19:25:42&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_custom_post&gt;false&lt;/u_custom_post&gt;&lt;u_custom_post_script&gt;&lt;![CDATA[(function(scope, record) {
     try {
 		return undefined;
 	} catch (e) {
 		scope.error = e;
 	}
-})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+})(scope, record);]]&gt;&lt;/u_custom_post_script&gt;&lt;u_key display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_key&gt;&lt;u_number&gt;CONFTBL0001001&lt;/u_number&gt;&lt;u_source&gt;6816f79cc0a8016401c5a33be04be441&lt;/u_source&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_validate&gt;false&lt;/u_validate&gt;&lt;u_validation_script&gt;&lt;![CDATA[(function(scope, record) {
     try {
 		return undefined;
 	} catch (e) {
 		scope.error = e;
 	}
-})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
-    try {
-		return undefined;
-	} catch (e) {
-		scope.error = e;
-	}
-})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;choice&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
-<payload_hash>-293327151</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+})(scope, record);]]&gt;&lt;/u_validation_script&gt;&lt;/u_rest_api_configuration_table&gt;&lt;/record_update&gt;</payload>
+<payload_hash>130519040</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>8ce18a691b8f5110ace755f0604bcb3b</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>7317ddf21b07d110ace755f0604bcb08</sys_id>
 <sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e612970000001</sys_recorded_at>
+<sys_recorded_at>18458e5ac290000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
-<target_name>OBJCONF0001020</target_name>
-<type>REST API Configuration Object</type>
+<target_name>CONFTBL0001001</target_name>
+<type>REST API Configuration Table</type>
 <update_domain>global</update_domain>
-<update_guid>7691c6693a8f51107474e4a62bbf45db</update_guid>
-<update_guid_history>7691c6693a8f51107474e4a62bbf45db:-293327151</update_guid_history>
+<update_guid>9c818269598f51109b67f795dfa59d53</update_guid>
+<update_guid_history>9c818269598f51109b67f795dfa59d53:130519040</update_guid_history>
 <update_set display_value=""/>
 <view/>
 </sys_update_xml>
@@ -564,15 +232,15 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;reference&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
 <payload_hash>-1498534424</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>c0e18a691b8f5110ace755f0604bcb3d</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>7717ddf21b07d110ace755f0604bcb07</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_recorded_at>18458e612db0000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
 <target_name>OBJCONF0001028</target_name>
 <type>REST API Configuration Object</type>
@@ -608,15 +276,15 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;reference&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
 <payload_hash>-454396258</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>c4e18a691b8f5110ace755f0604bcb3c</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>7b17ddf21b07d110ace755f0604bcb06</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_recorded_at>18458e6126b0000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
 <target_name>OBJCONF0001017</target_name>
 <type>REST API Configuration Object</type>
@@ -652,15 +320,15 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 	}
 })(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Problem" name="problem"&gt;fef312a4f98211108c8bd16244dfe776&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
 <payload_hash>211014624</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>c8e18a691b8f5110ace755f0604bcb3b</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>7f1759be1bc3d110ace755f0604bcb83</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_recorded_at>18458e6123f0000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
 <target_name>OBJCONF0001027</target_name>
 <type>REST API Configuration Object</type>
@@ -675,36 +343,370 @@ gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/
 <application display_value="Global">global</application>
 <category>customer</category>
 <comments/>
-<name>u_rest_api_configuration_table_e0682cd91b8b1110ace755f0604bcb1c</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_table"&gt;&lt;u_rest_api_configuration_table action="INSERT_OR_UPDATE"&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 19:11:34&lt;/sys_created_on&gt;&lt;sys_id&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 19:25:42&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_custom_post&gt;false&lt;/u_custom_post&gt;&lt;u_custom_post_script&gt;&lt;![CDATA[(function(scope, record) {
+<name>u_rest_api_configuration_object_99c6f34d1bc71110ace755f0604bcb46</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 15:34:40&lt;/sys_created_on&gt;&lt;sys_id&gt;99c6f34d1bc71110ace755f0604bcb46&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;id&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001018&lt;/u_number&gt;&lt;u_order&gt;0&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
     try {
 		return undefined;
 	} catch (e) {
 		scope.error = e;
 	}
-})(scope, record);]]&gt;&lt;/u_custom_post_script&gt;&lt;u_key display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_key&gt;&lt;u_number&gt;CONFTBL0001001&lt;/u_number&gt;&lt;u_source&gt;6816f79cc0a8016401c5a33be04be441&lt;/u_source&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_validate&gt;false&lt;/u_validate&gt;&lt;u_validation_script&gt;&lt;![CDATA[(function(scope, record) {
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
     try {
 		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1235098721</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>b317ddf21b07d110ace755f0604bcb07</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e612290000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001018</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>26910669628f5110bbb8f919badbed17</update_guid>
+<update_guid_history>26910669628f5110bbb8f919badbed17:-1235098721</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_object_4d1db0111b0f1110ace755f0604bcb16</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 20:42:40&lt;/sys_created_on&gt;&lt;sys_id&gt;4d1db0111b0f1110ace755f0604bcb16&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 21:45:54&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;description&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Short description" element="short_description" name="task"&gt;2a7056e4f90211108c8bd16244dfe70d&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001025&lt;/u_number&gt;&lt;u_order&gt;5&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-805036755</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>b71759be1bc3d110ace755f0604bcb84</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e612520000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001025</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>2691c6693c8f511067e60e33d558f9d7</update_guid>
+<update_guid_history>2691c6693c8f511067e60e33d558f9d7:-805036755</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_object_1217334d1bc71110ace755f0604bcbd0</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 15:36:06&lt;/sys_created_on&gt;&lt;sys_id&gt;1217334d1bc71110ace755f0604bcbd0&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;false&lt;/u_active&gt;&lt;u_api_field_name&gt;opened&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Opened" element="opened_at" name="task"&gt;a27056e4f90211108c8bd16244dfe71e&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001019&lt;/u_number&gt;&lt;u_order&gt;30&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;date&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-953981588</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>bb1759be1bc3d110ace755f0604bcb83</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e6127f0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001019</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>be91c6691c8f5110c585f760e4edccd9</update_guid>
+<update_guid_history>be91c6691c8f5110c585f760e4edccd9:-953981588</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_table_d9cd685d1b8b1110ace755f0604bcb2d</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_table"&gt;&lt;u_rest_api_configuration_table action="INSERT_OR_UPDATE"&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 19:35:06&lt;/sys_created_on&gt;&lt;sys_id&gt;d9cd685d1b8b1110ace755f0604bcb2d&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-08 17:27:56&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_custom_post&gt;false&lt;/u_custom_post&gt;&lt;u_custom_post_script&gt;&lt;![CDATA[(function(scope, data) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, data);]]&gt;&lt;/u_custom_post_script&gt;&lt;u_key display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_key&gt;&lt;u_number&gt;CONFTBL0001002&lt;/u_number&gt;&lt;u_source&gt;6816f79cc0a8016401c5a33be04be441&lt;/u_source&gt;&lt;u_table display_value="Problem" name="problem"&gt;fef312a4f98211108c8bd16244dfe776&lt;/u_table&gt;&lt;u_validate&gt;false&lt;/u_validate&gt;&lt;u_validation_script&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		throw 'Error from problem configuration object';
 	} catch (e) {
 		scope.error = e;
 	}
 })(scope, record);]]&gt;&lt;/u_validation_script&gt;&lt;/u_rest_api_configuration_table&gt;&lt;/record_update&gt;</payload>
-<payload_hash>130519040</payload_hash>
-<remote_update_set display_value="REST API Engine Testing Utils">80e18a691b8f5110ace755f0604bcb3b</remote_update_set>
+<payload_hash>437727874</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-11-08 20:20:55</sys_created_on>
-<sys_id>cce18a691b8f5110ace755f0604bcb3d</sys_id>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>bf17ddf21b07d110ace755f0604bcb07</sys_id>
 <sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>18458e5ac290000001</sys_recorded_at>
+<sys_recorded_at>18458e59d740000001</sys_recorded_at>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-11-08 20:20:55</sys_updated_on>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
 <table/>
-<target_name>CONFTBL0001001</target_name>
+<target_name>CONFTBL0001002</target_name>
 <type>REST API Configuration Table</type>
 <update_domain>global</update_domain>
-<update_guid>9c818269598f51109b67f795dfa59d53</update_guid>
-<update_guid_history>9c818269598f51109b67f795dfa59d53:130519040</update_guid_history>
+<update_guid>9f714669fc8f51109e692eb381331e47</update_guid>
+<update_guid_history>9f714669fc8f51109e692eb381331e47:437727874</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_fix_cab14a691b8f5110ace755f0604bcbf9</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;&lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;&lt;before&gt;false&lt;/before&gt;&lt;description/&gt;&lt;name&gt;REST API Engine Testing&lt;/name&gt;&lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;&lt;script&gt;&lt;![CDATA[params = {
+    paginate: {
+        perPage: 1,
+        page: 1
+    },
+    sort: {
+        by: 'id',
+        order: 'DESC'
+    },
+    // payload: {
+    // description: 'Incident created from API',
+    // state: '2',
+    // problem: {
+    // description: 'Problem created from API',
+    // },
+    // parent: 'INC0009004'
+    // },
+    payload: [{
+            description: 'Incident created from API',
+            status: '2',
+            problem: {
+                description: 'Problem created from API',
+            },
+            parent: 'INC0009004'
+        },
+        {
+            description: 'Incident created from API - 2',
+            status: '2',
+            problem: {
+                description: 'Problem created from API - 2',
+            },
+            parent: 'INC0009004'
+        }
+    ],
+    table: 'incident',
+    /* Mandatory */
+    query: 'id=INC0010170'
+};
+
+var s = new APIUtils(params);
+
+response = s.getRequest();
+response = s.postRequest();
+
+gs.info(response);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-08 20:20:31&lt;/sys_created_on&gt;&lt;sys_id&gt;cab14a691b8f5110ace755f0604bcbf9&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;REST API Engine Testing&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_fix_cab14a691b8f5110ace755f0604bcbf9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-12 14:25:59&lt;/sys_updated_on&gt;&lt;unloadable&gt;false&lt;/unloadable&gt;&lt;/sys_script_fix&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-529665198</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>f31759be1bc3d110ace755f0604bcb83</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1846c3ba6570000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>REST API Engine Testing</target_name>
+<type>Fix Script</type>
+<update_domain>global</update_domain>
+<update_guid>f7f61df26a07d110d886ba8c879e09bf</update_guid>
+<update_guid_history>f7f61df26a07d110d886ba8c879e09bf:-529665198,52c10a69948f5110d79f6bb785525d40:-526554163</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_object_31c85cd91b4b1110ace755f0604bcb2d</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 18:03:14&lt;/sys_created_on&gt;&lt;sys_id&gt;31c85cd91b4b1110ace755f0604bcb2d&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 20:11:46&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;id&lt;/u_api_field_name&gt;&lt;u_choice_set/&gt;&lt;u_configuration_table display_value="CONFTBL0001002"&gt;d9cd685d1b8b1110ace755f0604bcb2d&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Number" element="number" name="task"&gt;667056e4f90211108c8bd16244dfe70c&lt;/u_field&gt;&lt;u_format/&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001024&lt;/u_number&gt;&lt;u_order&gt;0&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Problem" name="problem"&gt;fef312a4f98211108c8bd16244dfe776&lt;/u_table&gt;&lt;u_type&gt;string&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1568256628</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>f31759be1bc3d110ace755f0604bcb84</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e612100000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001024</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>229106690b8f5110c9f70df73e2eb016</update_guid>
+<update_guid_history>229106690b8f5110c9f70df73e2eb016:-1568256628</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_object_e4a750d91b4b1110ace755f0604bcb18</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:58:15&lt;/sys_created_on&gt;&lt;sys_id&gt;e4a750d91b4b1110ace755f0604bcb18&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 22:08:47&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;state&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;false&lt;/u_display&gt;&lt;u_field display_value="State" element="state" name="task"&gt;a67056e4f90211108c8bd16244dfe715&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001022&lt;/u_number&gt;&lt;u_order&gt;41&lt;/u_order&gt;&lt;u_post&gt;true&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;choice&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-204877814</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>fb17ddf21b07d110ace755f0604bcb07</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e612ab0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001022</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>3a91c669fc8f511050ef89cea825ebdc</update_guid>
+<update_guid_history>3a91c669fc8f511050ef89cea825ebdc:-204877814</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>u_rest_api_configuration_object_985c08111b4b1110ace755f0604bcbf7</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="u_rest_api_configuration_object"&gt;&lt;u_rest_api_configuration_object action="INSERT_OR_UPDATE"&gt;&lt;sys_class_name&gt;u_rest_api_configuration_object&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 17:08:49&lt;/sys_created_on&gt;&lt;sys_id&gt;985c08111b4b1110ace755f0604bcbf7&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 19:15:52&lt;/sys_updated_on&gt;&lt;u_active&gt;true&lt;/u_active&gt;&lt;u_api_field_name&gt;active&lt;/u_api_field_name&gt;&lt;u_choice_set display_value="state" element="state" name="incident"&gt;3217dae4f9c211108c8bd16244dfe79e&lt;/u_choice_set&gt;&lt;u_configuration_table display_value="CONFTBL0001001"&gt;e0682cd91b8b1110ace755f0604bcb1c&lt;/u_configuration_table&gt;&lt;u_display&gt;true&lt;/u_display&gt;&lt;u_field display_value="Active" element="active" name="task"&gt;a67056e4f90211108c8bd16244dfe70e&lt;/u_field&gt;&lt;u_format&gt;dd.MM.yyyy&lt;/u_format&gt;&lt;u_get&gt;true&lt;/u_get&gt;&lt;u_number&gt;OBJCONF0001021&lt;/u_number&gt;&lt;u_order&gt;50&lt;/u_order&gt;&lt;u_post&gt;false&lt;/u_post&gt;&lt;u_put&gt;false&lt;/u_put&gt;&lt;u_query&gt;false&lt;/u_query&gt;&lt;u_referenced_table_id/&gt;&lt;u_referenced_table_name/&gt;&lt;u_required&gt;false&lt;/u_required&gt;&lt;u_script_get&gt;&lt;![CDATA[(function(scope, record) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record);]]&gt;&lt;/u_script_get&gt;&lt;u_script_post&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_post&gt;&lt;u_script_put&gt;&lt;![CDATA[(function(scope, record, value) {
+    try {
+		return undefined;
+	} catch (e) {
+		scope.error = e;
+	}
+})(scope, record, value);]]&gt;&lt;/u_script_put&gt;&lt;u_table display_value="Incident" name="incident"&gt;07f312a4f98211108c8bd16244dfe7d8&lt;/u_table&gt;&lt;u_type&gt;boolean&lt;/u_type&gt;&lt;/u_rest_api_configuration_object&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1157594292</payload_hash>
+<remote_update_set display_value="REST API Engine Testing Utils">331759be1bc3d110ace755f0604bcb83</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-11-12 14:26:31</sys_created_on>
+<sys_id>ff17ddf21b07d110ace755f0604bcb06</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18458e612c20000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-11-12 14:26:31</sys_updated_on>
+<table/>
+<target_name>OBJCONF0001021</target_name>
+<type>REST API Configuration Object</type>
+<update_domain>global</update_domain>
+<update_guid>3e91c6690b8f5110c2c049f3ede5d9dd</update_guid>
+<update_guid_history>3e91c6690b8f5110c2c049f3ede5d9dd:-1157594292</update_guid_history>
 <update_set display_value=""/>
 <view/>
 </sys_update_xml>
