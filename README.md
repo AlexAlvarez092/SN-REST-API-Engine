@@ -26,6 +26,10 @@ Features included:
 
 ![APIUtils UML](./README/APIUtils_uml.png)
 
+#### Flow GET request
+
+![Flow GET Request](./README/flow_get.png)
+
 ### Tables
 
 | Table | Description |
@@ -38,8 +42,6 @@ Features included:
 - `Type changes`: Modify the behavior of the form view of the *REST API Configuration Object*.
 
 ![Type changes](./README/client_script_type_changes.gif)
-
-
 
 ### UI Policies
 
