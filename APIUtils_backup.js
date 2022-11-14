@@ -1,10 +1,16 @@
 var APIUtils = Class.create();
 APIUtils.prototype = {
 	initialize: function (args) {
+		// Variables used in several places
+		this.grRecord = args.record || undefined;
+		this.error = undefined;
+		
+		if (!args.table) this._throwError('Internal error', 400, 'Table name is mandatory');
+
 		// Initialize logger
 		this.logger = new GSLog('', this.type);
 		this.logger.includeTimestamp();
-		this.logger.setLevel(global.GSLog.DEBUG); 
+		this.logger.setLevel(global.GSLog.DEBUG);		
 
 		// Initialize settings and mapping objects
 		this.settings = this._getSettings(args.table);
@@ -28,10 +34,6 @@ APIUtils.prototype = {
 		// Initialize variables relevant to recursive calls
 		// ? Is it possible to identify recursively calls?
 		this.recursiveCall = args.recursiveCall || false; // In recursive calls, this need to be true
-
-		// Variables used in several places
-		this.grRecord = args.record || undefined;
-		this.error = undefined;
 	},
 
 	getRequest: function () {
@@ -53,9 +55,8 @@ APIUtils.prototype = {
 		while (this.grRecord.next())
 			records.push(this._decodeGr(this.grRecord));
 
-		var response = !this.metadata ? 
-			records[0] :
-			{
+		var response = !this.metadata ?
+			records[0] : {
 				pageInfo: {
 					totalPages: this.paginate ? Math.ceil(this._getCount() / this.paginate.perPage) : 1,
 					currentPage: this.paginate ? parseFloat(this.paginate.page) : 1
@@ -71,13 +72,26 @@ APIUtils.prototype = {
 		return response;
 	},
 
-	_buildGlideRecord: function (payload) {
-		this._canPost(payload); 
+	putRequest: function () {
+		// Get record
+		this.grRecord = new GlideRecordUtils(this.recordId, this.settings.table.name).getRecord();
+
+		// Build record
+		var _gr = this._buildGlideRecord(this.payload, 'put');
+
+		// Update record
+		return this._updateGlideRecord(_gr);
+	},
+
+	_buildGlideRecord: function (payload, operation) {
+		
+		if (operation === 'post') this._canPost(payload);
+		if (operation === 'put') this._canPut(payload);
 
 		var _gr = new GlideRecord(this.settings.table.name);
-		_gr.newRecord();
+		(operation === 'post') ? _gr.newRecord() : _gr = this.grRecord;
 
-		for (var _field in payload) _gr = this._encodeGr(_gr, _field, 'post', payload);
+		for (var _field in payload) _gr = this._encodeGr(_gr, _field, operation, payload);
 
 		// Validation
 		if (this.settings.validate) this._exec('u_rest_api_configuration_table', this.settings.id, 'u_validation_script', _gr);
@@ -86,29 +100,62 @@ APIUtils.prototype = {
 	},
 
 	_canPost: function (payload) {
-		//forbidden attributes
-		this._checkForBiddenAttributes(payload, 'post');
-		//required attributes
+		// Check forbidden attributes
+		this._checkForbiddenAttributes(payload, 'post');
+		
+		// Check required attributes
 		this._checkMissingRequiredAttributes(payload);
 
 		for (var field in payload) {
 			var map = this._getFieldMap(field);
 
-			//field not recognise
+			// Field not recognise
 			if (!map) this._throwError('Unknown attribute ' + field + ' included in payload for table: ' + this.settings.table.name, 400, '');
 
 			switch (map.type) {
 				case 'reference':
 					// Payload contains a new record
-					if (typeof(payload[field] !== 'string')) continue;
+					if (typeof (payload[field] !== 'string')) continue;
 
 					var grAux = new GlideRecord(map.referencedTable.name);
 					if (!grAux.get(map.referencedId.name, payload[field])) this._throwError('Record not found', 400, 'Record with ID ' + payload[field] + ' not found. Please, check payload attribute: ' + field);
 					break;
 
 				case 'choice':
-					// ? We may reuse the method included in GlideRecordUtils()
-					//this._checkChoiceValue(field);
+					// * Reuse the GlideRecordUtils.isValidChoiceValue() is fisible but requires a lot of refactor. At this point of the execution, 
+					// * the GlideRecord is not initialized thus we cannot initialize the GlideRecordUtils.
+					this._checkChoiceValue(field, payload);
+					break;
+
+				default:
+					break;
+			}
+		}
+	},
+
+	_canPut: function (payload) {
+		// Check forbidden attributes
+		this._checkForbiddenAttributes(payload, 'put');
+
+		for (var field in payload) {
+			var map = this._getFieldMap(field);
+
+			// Field not recognise
+			if (!map) this._throwError('Unknown attribute ' + field + ' included in payload for table: ' + this.settings.table.name, 400, '');
+
+			switch (map.type) {
+				case 'reference':
+					// Payload contains a new record
+					if (typeof (payload[field] !== 'string')) continue;
+
+					var grAux = new GlideRecord(map.referencedTable.name);
+					if (!grAux.get(map.referencedId.name, payload[field])) this._throwError('Record not found', 400, 'Record with ID ' + payload[field] + ' not found. Please, check payload attribute: ' + field);
+					break;
+
+				case 'choice':
+					// * Reuse the GlideRecordUtils.isValidChoiceValue() is fisible but requires a lot of refactor. At this point of the execution, 
+					// * the GlideRecord is not initialized thus we cannot initialize the GlideRecordUtils.
+					this._checkChoiceValue(field, payload);
 					break;
 
 				default:
@@ -122,7 +169,7 @@ APIUtils.prototype = {
 
 		var forbiddenAttrs = [];
 
-		splittedQuery.forEach(function(_e) {
+		splittedQuery.forEach(function (_e) {
 			var _m = _that._getFieldMap(_e);
 			if (!_m.query) forbiddenAttrs.push(_e);
 		});
@@ -130,29 +177,25 @@ APIUtils.prototype = {
 		if (forbiddenAttrs.length > 0) this._throwError('Invalid request', 400, 'The following attributes cannot be queried: ' + forbiddenAttrs.toString());
 	},
 
-	// TODO
-	// ? We may reuse the method included in GlideRecordUtils()
-	_checkChoiceValue: function (field) {
-		var _that = this;
-
+	// TODO Reuse methods in GlideRecordUtils
+	_checkChoiceValue: function (field, payload) {
 		var _map = this._getFieldMap(field);
 
 		var _dependentFiltered = this.payload[_map.dependentField] ?
 			_map.choices.filter(function (choice) {
-				return choice.dependentValue === _that.payload[_map.dependentField];
+				return choice.dependentValue === payload[_map.dependentField];
 			}) :
 			_map.choices;
 
 		var valueFiltered = _dependentFiltered.filter(function (choice) {
-			return choice.value === _that.payload[field];
+			return choice.value === payload[field];
 		});
 
 		if (valueFiltered.length === 0) this._throwError('Invalid value for attribute: ' + field);
-
 	},
 
-	_checkForBiddenAttributes: function (payload, method) {
-		
+	_checkForbiddenAttributes: function (payload, method) {
+
 		var _that = this;
 		var forbiddenAttrs = [];
 		this.mapping.forEach(function (attr) {
@@ -186,11 +229,14 @@ APIUtils.prototype = {
 			if (!_m.get) continue;
 
 			switch (_m.type) {
-
-				// ! Fails but I guess it is related to my PDI version
 				case 'date':
-					var _gdt = new GlideDateTime(_gr.getValue(_m.dbField.name));
-					obj[_m.apiField] = _gdt.getDate().getByFormat(_m.fornat) || "";
+					if (!_gr.getValue(_m.dbField.name)) {
+						obj[_m.apiField] = '';
+						break;
+					}
+					var _gdt = new GlideDate();
+					_gdt.setValue(_gr.getValue(_m.dbField.name));
+					obj[_m.apiField] = _gdt.getByFormat(_m.format);
 					break;
 
 				case 'boolean':
@@ -202,13 +248,16 @@ APIUtils.prototype = {
 					break;
 
 				case 'reference':
-					switch(_m.getType) {
+					switch (_m.getType) {
 						case 'display':
 							obj[_m.apiField] = _gr[_m.dbField.name][_m.referencedId.name].getDisplayValue();
 							break;
 
 						case 'object':
-							obj[_m.apiField] = new APIUtils({ table: _m.referencedTable.name, query: 'sys_id=' + _gr[_m.dbField.name].getValue()}).getRequest();
+							obj[_m.apiField] = new APIUtils({
+								table: _m.referencedTable.name,
+								query: 'sys_id=' + _gr[_m.dbField.name].getValue()
+							}).getRequest();
 							break;
 
 						default:
@@ -230,7 +279,7 @@ APIUtils.prototype = {
 
 	_decodeQuery: function (splittedQuery) {
 		var _that = this;
-		splittedQuery.forEach(function(_e) {
+		splittedQuery.forEach(function (_e) {
 			var _m = _that._getFieldMap(_e);
 			var _s = _e + '(?==)';
 			var _r = new RegExp(_s);
@@ -246,10 +295,14 @@ APIUtils.prototype = {
 		switch (_map.type) {
 
 			case 'reference':
-				if (typeof(payload[field]) === 'object') {
-					record[_map.dbField.name] = new APIUtils({ table: _map.referencedTable.name, recursiveCall: true, payload: payload[field] }).postRequest();
+				if (typeof (payload[field]) === 'object') {
+					record[_map.dbField.name] = new APIUtils({
+						table: _map.referencedTable.name,
+						recursiveCall: true,
+						payload: payload[field]
+					}).postRequest();
 					break;
-				} 
+				}
 
 				// ? We may reuse the method included in GlideRecordUtils()
 				var grAux = new GlideRecord(_map.referencedTable.name);
@@ -365,7 +418,7 @@ APIUtils.prototype = {
 				grChoice.addQuery('language', 'en');
 				grChoice.query();
 
-				while (grChoice.next()) 
+				while (grChoice.next())
 					objConfig.choices.push({
 						label: grChoice.getValue('label'),
 						value: grChoice.getValue('value'),
@@ -374,14 +427,14 @@ APIUtils.prototype = {
 			}
 
 			if (_c.getValue('u_type') === 'date') objConfig.format = _c.getValue('u_format');
-			
+
 			_arrConfig.push(objConfig);
 		}
 
 		return _arrConfig;
 	},
 
-	_getQuery: function() {
+	_getQuery: function () {
 		// ! Limitation: Due to ES5, Lookbehind Assertion is not available
 		// ! Limitation: The attribute name must be written in camelCase format containing only alphabetic characters
 		var _r = /([a-z]+\w*)(?==)/g;
@@ -424,14 +477,14 @@ APIUtils.prototype = {
 				label: _grTable.getDisplayValue('u_key')
 			},
 			custom_post: (_grTable.getValue('u_custom_post') === '1'),
+			custom_put: (_grTable.getValue('u_custom_put') === '1'),
 			validate: (_grTable.getValue('u_validate') === '1')
 		};
 	},
 
 	_insertGlideRecord: function (_gr) {
 		// Custom POST. Just encode the gr and execute the script
-		// TODO Sent also the original payload
-		if (this.settings.custom_post) _gr = this._exec('u_rest_api_configuration_table', this.settings.id, 'u_custom_post_script', _gr);
+		if (this.settings.custom_post) _gr = this._exec('u_rest_api_configuration_table', this.settings.id, 'u_custom_post_script', _gr, this.payload);
 		else _gr.insert();
 
 		var _resp = this.recursiveCall ? _gr.getUniqueValue() : this._decodeGr(_gr);
@@ -451,7 +504,7 @@ APIUtils.prototype = {
 
 		// Build GlideRecord
 		this.payload.forEach(function (payload) {
-			_arr.push(_that._buildGlideRecord(payload));
+			_arr.push(_that._buildGlideRecord(payload, 'post'));
 		});
 
 		var _res = [];
@@ -467,14 +520,14 @@ APIUtils.prototype = {
 	},
 
 	_postSingleRequest: function () {
-		var _gr = this._buildGlideRecord(this.payload);
+		var _gr = this._buildGlideRecord(this.payload, 'post');
 		return this._insertGlideRecord(_gr);
 	},
 
 	_sort: function () {
 		var _m = this._getFieldMap(this.sort.by);
 		(!this.sort.order || this.sort.order == 'ASC') ?
-			this.grRecord.orderBy(_m.dbField.name):
+		this.grRecord.orderBy(_m.dbField.name):
 			this.grRecord.orderByDesc(_m.dbField.name);
 
 	},
@@ -485,6 +538,15 @@ APIUtils.prototype = {
 		_err.code = code;
 		_err.detail = detail;
 		throw _err;
+	},
+
+	_updateGlideRecord: function (_gr) {
+		// Custom PUT. Just encode the gr and execute the script
+		if (this.settings.custom_put) _gr = this._exec('u_rest_api_configuration_table', this.settings.id, 'u_custom_put_script', _gr, this.payload);
+		else _gr.update();
+
+		var _resp = this.recursiveCall ? _gr.getUniqueValue() : this._decodeGr(_gr);
+		return _resp;
 	},
 
 	type: 'APIUtils'
