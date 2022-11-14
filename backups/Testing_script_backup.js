@@ -33,21 +33,22 @@ params = {
     //     parent: 'INC0009004'
     //   }
     // ],
-    payload: {
-        status: '2',
-        problem: 'PRB0040177',
-        assignee: 'abel.tuter'
-    },
+    // payload: {
+    //   status: '2',
+    //   problem: 'PRB0040177',
+    //   assignee: 'abel.tuter'
+    // },
     table: 'incident',
     /* Mandatory */
     query: 'id=INC0010230',
-    recordId: 'INC0010230'
+    recordId: 'INC0010230',
+    metadata: true
 };
 
 var s = new APIUtils(params);
 
 //response = s.getRequest();
-//response = s.postRequest();
-response = s.putRequest();
+response = s.postRequest();
+//response = s.putRequest();
 
 gs.info(response);
