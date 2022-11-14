@@ -91,9 +91,9 @@ Features included:
 
 ```js
 (function(scope, record, payload) {
-    try {
+	try {
 		// Your code here
-        return undefined;
+		return undefined;
 	} catch (e) {
 		scope.error = e;
 	}
@@ -108,8 +108,8 @@ Features included:
 
 ```js
 (function(scope, record) {
-    try {
-        // Your code here
+	try {
+		// Your code here
 		return undefined;
 	} catch (e) {
 		scope.error = e;
@@ -124,8 +124,8 @@ Features included:
 
 ```js
 (function(scope, record) {
-    try {
-        // Your code here
+	try {
+		// Your code here
 		return undefined;
 	} catch (e) {
 		scope.error = e;
@@ -140,7 +140,7 @@ Features included:
 
 ```js
 (function(scope, record, value) {
-    try {
+	try {
 		// Your code here
 		return undefined;
 	} catch (e) {
