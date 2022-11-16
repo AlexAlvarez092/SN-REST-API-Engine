@@ -17,15 +17,9 @@ APIUtils.prototype = {
 		this.mapping = this._getMapping();
 
 		// Initialize variables relevant to GET requests or response send for other kind of requests
-		this.metadata = args.metadata || undefined; // Internally used. Defines whether return or not the pagination, sort, etc. info in GET requests
 		this.paginate = args.paginate || undefined;
 		this.sort = args.sort || undefined;
 		this.query = args.query || undefined; // Undefined for POST / PUT requests
-
-		// Initialize logging variables
-		// this.headers = args.headers || undefined;
-		// this.url = args.url || undefined;
-		// this.scriptedRestMessage = args.scriptedRestMessage || undefined;
 
 		// Initialize variables relevant to POST / PUT requests
 		this.payload = args.payload || undefined; // Undefined for GET requests. Mandatory for POST / PUT requests
@@ -55,8 +49,8 @@ APIUtils.prototype = {
 		while (this.grRecord.next())
 			records.push(this._decodeGr(this.grRecord));
 
-		var response = !this.metadata ?
-			records[0] : {
+		var response = this.recursiveCall ?
+			records : {
 				pageInfo: {
 					totalPages: this.paginate ? Math.ceil(this._getCount() / this.paginate.perPage) : 1,
 					currentPage: this.paginate ? parseFloat(this.paginate.page) : 1
@@ -177,7 +171,7 @@ APIUtils.prototype = {
 		if (forbiddenAttrs.length > 0) this._throwError('Invalid request', 400, 'The following attributes cannot be queried: ' + forbiddenAttrs.toString());
 	},
 
-	// TODO Reuse methods in GlideRecordUtils
+	// TODO Reuse methods in GlideRecordUtils.
 	_checkChoiceValue: function (field, payload) {
 		var _map = this._getFieldMap(field);
 
@@ -240,7 +234,7 @@ APIUtils.prototype = {
 					break;
 
 				case 'boolean':
-					obj[_m.apiField] = (_gr.getValue(_m.dbField.name) === '1');
+					obj[_m.apiField] = String(_gr.getValue(_m.dbField.name) === '1');
 					break;
 
 				case 'script':
@@ -250,18 +244,23 @@ APIUtils.prototype = {
 				case 'reference':
 					switch (_m.getType) {
 						case 'display':
-							obj[_m.apiField] = _gr[_m.dbField.name][_m.referencedId.name].getDisplayValue();
+							obj[_m.apiField] = _gr[_m.dbField.name][_m.referencedId.name].getDisplayValue() || '';
 							break;
 
 						case 'object':
 							obj[_m.apiField] = new APIUtils({
 								table: _m.referencedTable.name,
-								query: 'sys_id=' + _gr[_m.dbField.name].getValue()
-							}).getRequest();
+								query: 'sys_id=' + _gr[_m.dbField.name].getValue(),
+								recursiveCall: true
+							}).getRequest() || '';
 							break;
 
-						default:
-							obj[_m.apiField] = _gr[_m.dbField.name].getValue();
+						case 'dot_walking':
+							obj[_m.apiField] = _gr[_m.dbField.name][_m.referencedField.name].getDisplayValue() || '';
+							break;
+
+						default: //internal
+							obj[_m.apiField] = _gr[_m.dbField.name].getValue() || '';
 							break;
 					}
 					break;
@@ -404,6 +403,11 @@ APIUtils.prototype = {
 					id: _c.getValue('u_referenced_table_id'),
 					label: _c.getDisplayValue('u_referenced_table_id')
 				};
+				objConfig.referencedField = {
+					name: _c.u_referenced_table_field.element.getValue() || '',
+					id: _c.getValue('u_referenced_table_field') || '',
+					label: _c.getDisplayValue('u_referenced_table_field') || ''
+				}
 			}
 
 			if (_c.getValue('u_type') === 'choice') {

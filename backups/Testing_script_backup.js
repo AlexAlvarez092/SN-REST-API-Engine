@@ -5,16 +5,16 @@ params = {
     },
     sort: {
         by: 'id',
-        order: 'DESC'
+           order: 'DESC'
     },
-    // payload: {
-    //   description: 'Incident created from API',
-    //   status: '2',
-    //   problem: {
-    //   	description: 'Problem created from API',
-    //   },
-    //   parent: 'INC0009004'
-    // },
+    payload: {
+      description: 'Incident created from API',
+      status: '2',
+      problem: {
+          description: 'Problem created from API',
+      },
+      parent: 'INC0009004'
+    },
     // payload: [
     //   {
     // description: 'Incident created from API',
@@ -38,17 +38,15 @@ params = {
     //   problem: 'PRB0040177',
     //   assignee: 'abel.tuter'
     // },
-    table: 'incident',
-    /* Mandatory */
+    table: 'incident', /* Mandatory */
     query: 'id=INC0010230',
     recordId: 'INC0010230',
-    metadata: true
-};
-
-var s = new APIUtils(params);
-
-//response = s.getRequest();
-response = s.postRequest();
-//response = s.putRequest();
-
-gs.info(response);
+  };
+  
+  var s = new APIUtils(params);
+  
+  response = s.getRequest();
+  //response = s.postRequest();
+  //response = s.putRequest();
+  
+  gs.info(response);
