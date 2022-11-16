@@ -8,11 +8,31 @@
 
 Custom REST API Engine with extended capabilities
 
-Features included:
+**TL;TR; Ask Alex for support**
 
-**TODO**
+# Main features
 
-- . . .
+- GET / POST / PUT endpoints
+- Query as *ServiceNow Encoded Queries*. (Limited to `AND` queries). Example: `active=true^state=created`
+- Paginate the results
+- Sort the results
+- For related records, you can chooce between obtaining the internal value, display value, or the full record (needs a configuration object)
+- Choose what attributes are returned in the responses
+- Choose what attributes can be queried
+- Post multiple records in one request
+- Choose what attributes can be included in POST request
+- Mark attributes as mandatory in POST requests
+- Choose what attributes can be included in PUT request
+- Choose the data type for each attribute
+- Order the attributes in the response
+- Provide a different name for the attributes in the API (encapsulate data model)
+- Can execute scripts for attributes
+- Can execute a custom script in POST requests before insert
+- Can execute a custom script in PUT requests before update
+- Can execute a custom validation script in POST / PUT requests before insert / update
+- For choice attributes, check if the value is valid (existing and taking into account the dependent values)
+- For date attributes, select the format
+
 
 # Installation
 
@@ -164,6 +184,7 @@ Features included:
 - `Custom POST`: Modify the behavior of the form view of the *REST API Configuration Table*.
 - `Custom PUT`: Modify the behavior of the form view of the *REST API Configuration Table*.
 - `Custom Validation`: Modify the behavior of the form view of the *REST API Configuration Table*.
+- `GET disabled`: Modify the behavior of the form view of the *REST API Configuration Object*.
 
 ![UI Policies applied on the REST API Configuration table](./README/ui_policies_configuration_table.gif)
 
