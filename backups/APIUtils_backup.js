@@ -109,7 +109,7 @@ APIUtils.prototype = {
 			switch (map.type) {
 				case 'reference':
 					// Payload contains a new record
-					if (typeof (payload[field] !== 'string')) continue;
+					if (typeof (payload[field]) !== 'string') continue;
 
 					var grAux = new GlideRecord(map.referencedTable.name);
 					if (!grAux.get(map.referencedId.name, payload[field])) this._throwError('Record not found', 400, 'Record with ID ' + payload[field] + ' not found. Please, check payload attribute: ' + field);
